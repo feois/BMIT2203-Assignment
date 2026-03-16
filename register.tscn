@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://c375gtmcbjatd"]
+
+[ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_37wl2"]
+[ext_resource type="Script" uid="uid://dq2ksxkm13rnm" path="res://register.gd" id="1_r642n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cau7c"]
+bg_color = Color(0.61339027, 0.61339027, 0.61339027, 1)
+border_width_left = 48
+border_width_top = 16
+border_width_right = 48
+border_width_bottom = 16
+border_color = Color(0.6117647, 0.6117647, 0.6117647, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3n56f"]
+bg_color = Color(0.75819194, 0.75819176, 0.7581918, 1)
+border_width_left = 48
+border_width_top = 16
+border_width_right = 48
+border_width_bottom = 16
+border_color = Color(0.75686276, 0.75686276, 0.75686276, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="root" type="Control" unique_id=1566512179]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_37wl2")
+script = ExtResource("1_r642n")
+
+[node name="bg" type="ColorRect" parent="." unique_id=801382261]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6901961, 1, 0.7647059, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=333011158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_right = 96
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1380902775]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=670272341]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Booktel
+Register"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=699378510]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer3" unique_id=1390615019]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Full Name"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/VBoxContainer3" unique_id=2073922724]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+placeholder_text = "e.g. Joe Biden"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=926287262]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=339658805]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Email"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=516402196]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+placeholder_text = "example@gmail.com"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=790036430]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1325024835]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Password"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/VBoxContainer2" unique_id=2136977181]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=549144618]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer4" unique_id=1030209741]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Confirm Password"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/VBoxContainer4" unique_id=354291740]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+
+[node name="Control" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=1563057059]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Control" unique_id=1928243184]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_cau7c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cau7c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3n56f")
+text = "Register"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Control/Button" to="." method="_on_login_pressed"]
