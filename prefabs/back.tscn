@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bvh2tw5dlegbp"]
+
+[ext_resource type="Texture2D" uid="uid://yw1qflliqh3u" path="res://assets/back.png" id="1_7bgcf"]
+[ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_68xr0"]
+[ext_resource type="Script" uid="uid://cqx6descfasdg" path="res://prefabs/back.gd" id="2_6h56k"]
+
+[node name="Back" type="MarginContainer" unique_id=171212407]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 77.0
+grow_horizontal = 2
+theme = ExtResource("1_68xr0")
+script = ExtResource("2_6h56k")
+
+[node name="Button" type="Button" parent="." unique_id=429721455]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=856512893]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=950371610]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1022179898]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_7bgcf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=291423097]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

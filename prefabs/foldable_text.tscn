@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://gyvj0bph01ot"]
+
+[ext_resource type="Script" uid="uid://bydww8my8dck" path="res://prefabs/foldable_text.gd" id="1_akjns"]
+[ext_resource type="Texture2D" uid="uid://b1h3tkrxefbt2" path="res://assets/collapse.png" id="2_qfufo"]
+[ext_resource type="Texture2D" uid="uid://dsmesf1ujwp0a" path="res://assets/expand.png" id="3_yocce"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_akjns"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kq3i"]
+bg_color = Color(1, 1, 1, 0.19607843)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfufo"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yocce"]
+bg_color = Color(1, 1, 1, 0.09803922)
+
+[sub_resource type="Theme" id="Theme_xiqta"]
+Button/styles/focus = SubResource("StyleBoxEmpty_akjns")
+Button/styles/hover = SubResource("StyleBoxFlat_4kq3i")
+Button/styles/normal = SubResource("StyleBoxFlat_qfufo")
+Button/styles/pressed = SubResource("StyleBoxFlat_yocce")
+Label/colors/font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_qa6ky"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_akjns"]
+gradient = SubResource("Gradient_qa6ky")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[node name="FoldableText" type="Control" unique_id=980557313]
+clip_contents = true
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 540.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme = SubResource("Theme_xiqta")
+script = ExtResource("1_akjns")
+text = "Features:
+Facilities & Wellness
+24 Hours Restaurant (with Kid-Friendly Menus)
+Vending Machine
+Swimming Pool (10AM - 10PM)
+24 Hour Security guard
+Full-Service Spa (must be reserved)
+GYM Room (must be reserved)
+
+Attentive & Personalized Service
+Valet Parking
+24/7 Concierge
+Turndown Service
+Multi-lingual Staff
+
+Room Amenities & Comfort
+Luxurious Bathroom
+Coffee/Tea Stations
+Soundproofing
+Extra Beds / Sofa Beds (must be reserved)
+Laundry Service
+Baby Crib (must be reserved)"
+hmargin = 16
+vmargin = 16
+height = 120.0
+gradient_height = 64.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=377535495]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 601.0
+grow_horizontal = 2
+theme_override_constants/separation = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1249782102]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer" unique_id=1112507537]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Features:
+Facilities & Wellness
+24 Hours Restaurant (with Kid-Friendly Menus)
+Vending Machine
+Swimming Pool (10AM - 10PM)
+24 Hour Security guard
+Full-Service Spa (must be reserved)
+GYM Room (must be reserved)
+
+Attentive & Personalized Service
+Valet Parking
+24/7 Concierge
+Turndown Service
+Multi-lingual Staff
+
+Room Amenities & Comfort
+Luxurious Bathroom
+Coffee/Tea Stations
+Soundproofing
+Extra Beds / Sofa Beds (must be reserved)
+Laundry Service
+Baby Crib (must be reserved)"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=138956468]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1370467342]
+layout_mode = 2
+texture = ExtResource("2_qfufo")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=789983386]
+layout_mode = 2
+text = "Collapse"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1382812849]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_akjns")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1480048312]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer" unique_id=140835352]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer" unique_id=447235042]
+layout_mode = 2
+texture = ExtResource("3_yocce")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/HBoxContainer" unique_id=874350891]
+layout_mode = 2
+text = "Read More"
+
+[node name="Button" type="Button" parent="." unique_id=1192443110]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

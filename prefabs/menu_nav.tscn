@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dw5yql1051xtb"]
+
+[ext_resource type="Texture2D" uid="uid://bdo60graxdl1s" path="res://assets/icon.svg" id="1_a53ua"]
+
+[node name="MenuNav" type="CenterContainer" unique_id=1865282451]
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1229788836]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=1820800145]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=961811044]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer" unique_id=744265734]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1570585423]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_a53ua")
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=111542940]
+layout_mode = 2
+text = "test"
+horizontal_alignment = 1

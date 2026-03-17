@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://3fuvaeauvkfc"]
+
+[ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_mtib8"]
+[ext_resource type="PackedScene" uid="uid://ct61ndotqdl6i" path="res://prefabs/fav_hotel.tscn" id="2_2nquk"]
+[ext_resource type="PackedScene" uid="uid://dfgfxkkqv1epf" path="res://prefabs/nav.tscn" id="2_udn6e"]
+
+[node name="root2" type="Control" unique_id=1566512179]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mtib8")
+
+[node name="bg" type="ColorRect" parent="." unique_id=801382261]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6901961, 1, 0.7647059, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=333011158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1380902775]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1906682148]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Favorites"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1856209915]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/scrollbar_h_separation = 8
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 0
+scroll_hint_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=1840208860]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="FavHotel" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=656960770 instance=ExtResource("2_2nquk")]
+layout_mode = 2
+
+[node name="FavHotel2" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=768802430 instance=ExtResource("2_2nquk")]
+layout_mode = 2
+
+[node name="FavHotel3" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=862998702 instance=ExtResource("2_2nquk")]
+layout_mode = 2
+
+[node name="FavHotel4" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2099198084 instance=ExtResource("2_2nquk")]
+layout_mode = 2
+
+[node name="Nav" parent="MarginContainer/VBoxContainer" unique_id=769869833 instance=ExtResource("2_udn6e")]
+layout_mode = 2

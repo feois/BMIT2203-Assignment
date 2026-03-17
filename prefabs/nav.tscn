@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dfgfxkkqv1epf"]
+
+[ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_hjh7a"]
+[ext_resource type="Script" uid="uid://cdq7ebdsg38nb" path="res://prefabs/nav.gd" id="1_nrl5o"]
+[ext_resource type="PackedScene" uid="uid://dw5yql1051xtb" path="res://prefabs/menu_nav.tscn" id="2_hjh7a"]
+[ext_resource type="Texture2D" uid="uid://ceb74dqcsqcqy" path="res://assets/browse.png" id="3_jxx74"]
+[ext_resource type="Texture2D" uid="uid://bggkv8arxhgcv" path="res://assets/favorite.png" id="4_cc6t6"]
+[ext_resource type="Texture2D" uid="uid://csr881r57s4ib" path="res://assets/booking.png" id="5_ghged"]
+[ext_resource type="Texture2D" uid="uid://dvk80un181hxt" path="res://assets/account.png" id="6_kljk4"]
+
+[node name="Nav" type="HBoxContainer" unique_id=769869833]
+theme = ExtResource("1_hjh7a")
+script = ExtResource("1_nrl5o")
+
+[node name="Browse" parent="." unique_id=1865282451 instance=ExtResource("2_hjh7a")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Browse/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1865282451, 744265734) index="0" unique_id=1570585423]
+custom_minimum_size = Vector2(96, 96)
+texture = ExtResource("3_jxx74")
+expand_mode = 1
+
+[node name="Label" parent="Browse/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1865282451, 744265734) index="1" unique_id=111542940]
+text = "Browse"
+
+[node name="Favorites" parent="." unique_id=1115265037 instance=ExtResource("2_hjh7a")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Favorites/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1115265037, 744265734) index="0" unique_id=1570585423]
+custom_minimum_size = Vector2(96, 96)
+texture = ExtResource("4_cc6t6")
+expand_mode = 1
+
+[node name="Label" parent="Favorites/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1115265037, 744265734) index="1" unique_id=111542940]
+text = "Favorites"
+
+[node name="Bookings" parent="." unique_id=507189471 instance=ExtResource("2_hjh7a")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Bookings/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(507189471, 744265734) index="0" unique_id=1570585423]
+custom_minimum_size = Vector2(96, 96)
+texture = ExtResource("5_ghged")
+expand_mode = 1
+
+[node name="Label" parent="Bookings/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(507189471, 744265734) index="1" unique_id=111542940]
+text = "Bookings"
+
+[node name="Account" parent="." unique_id=1476150258 instance=ExtResource("2_hjh7a")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Account/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1476150258, 744265734) index="0" unique_id=1570585423]
+custom_minimum_size = Vector2(96, 96)
+texture = ExtResource("6_kljk4")
+expand_mode = 1
+
+[node name="Label" parent="Account/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1476150258, 744265734) index="1" unique_id=111542940]
+text = "Account"
+
+[connection signal="pressed" from="Browse/MarginContainer/Button" to="." method="_on_browse"]
+[connection signal="pressed" from="Favorites/MarginContainer/Button" to="." method="_on_favs"]
+[connection signal="pressed" from="Bookings/MarginContainer/Button" to="." method="_on_bookings"]
+[connection signal="pressed" from="Account/MarginContainer/Button" to="." method="_on_acc"]
+
+[editable path="Browse"]
+[editable path="Favorites"]
+[editable path="Bookings"]
+[editable path="Account"]
