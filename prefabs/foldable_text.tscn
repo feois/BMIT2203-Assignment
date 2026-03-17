@@ -38,6 +38,7 @@ anchors_preset = 0
 offset_right = 540.0
 offset_bottom = 120.0
 grow_horizontal = 2
+mouse_filter = 1
 theme = SubResource("Theme_xiqta")
 script = ExtResource("1_akjns")
 text = "Features:
@@ -74,11 +75,13 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 601.0
 grow_horizontal = 2
+mouse_filter = 2
 theme_override_constants/separation = 16
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1249782102]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
@@ -112,10 +115,12 @@ Baby Crib (must be reserved)"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=138956468]
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1370467342]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_qfufo")
 expand_mode = 3
 
@@ -133,6 +138,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 texture = SubResource("GradientTexture2D_akjns")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1480048312]
@@ -144,14 +150,17 @@ anchor_bottom = 1.0
 offset_top = -23.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme_override_constants/margin_bottom = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer" unique_id=140835352]
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect/MarginContainer/HBoxContainer" unique_id=447235042]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("3_yocce")
 expand_mode = 3
 
@@ -166,5 +175,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

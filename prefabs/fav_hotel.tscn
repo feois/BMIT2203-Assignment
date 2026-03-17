@@ -13,6 +13,7 @@ theme = ExtResource("1_o7t7f")
 
 [node name="Button" type="Button" parent="." unique_id=373114291]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=447585268]
 layout_mode = 2

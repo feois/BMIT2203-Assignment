@@ -9,7 +9,7 @@ extends HBoxContainer
 
 
 func load_scene(scene: PackedScene):
-	if get_tree().current_scene.scene_file_path != scene.resource_path:
+	if scene and get_tree().current_scene.scene_file_path != scene.resource_path:
 		get_tree().change_scene_to_packed(scene)
 		return true
 	return false

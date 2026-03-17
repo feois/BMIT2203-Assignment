@@ -3,6 +3,11 @@
 [ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_cilbf"]
 [ext_resource type="PackedScene" uid="uid://dfgfxkkqv1epf" path="res://prefabs/nav.tscn" id="2_5tp8u"]
 [ext_resource type="PackedScene" uid="uid://e18hxr8b6ex3" path="res://prefabs/acc_setting.tscn" id="2_ouiyo"]
+[ext_resource type="Texture2D" uid="uid://c0b2nn4qa480d" path="res://assets/info.png" id="3_1vg3t"]
+[ext_resource type="Texture2D" uid="uid://c40cg343ne755" path="res://assets/payment.png" id="4_qs6ex"]
+[ext_resource type="Texture2D" uid="uid://1d8s0fqkf5ak" path="res://assets/language.png" id="5_37m0w"]
+[ext_resource type="Texture2D" uid="uid://c1tjq8fvdggkg" path="res://assets/notif.png" id="6_8hvlb"]
+[ext_resource type="Texture2D" uid="uid://r1orjs6tcgr2" path="res://assets/support.png" id="7_4nosj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cilbf"]
 bg_color = Color(0.9, 0.9, 0.9, 1)
@@ -89,9 +94,9 @@ layout_mode = 2
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2" unique_id=1616154773]
 layout_mode = 2
 theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 16
+theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer" unique_id=25839931]
 layout_mode = 2
@@ -99,17 +104,53 @@ layout_mode = 2
 [node name="AccSetting" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1261903586 instance=ExtResource("2_ouiyo")]
 layout_mode = 2
 
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1261903586, 1544335546) index="0" unique_id=38948698]
+texture = ExtResource("3_1vg3t")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1261903586, 1544335546) index="1" unique_id=655306775]
+text = "Information"
+
 [node name="AccSetting2" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=913199174 instance=ExtResource("2_ouiyo")]
 layout_mode = 2
+
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting2/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(913199174, 1544335546) index="0" unique_id=38948698]
+texture = ExtResource("4_qs6ex")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting2/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(913199174, 1544335546) index="1" unique_id=655306775]
+text = "Payment method"
 
 [node name="AccSetting3" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1615188875 instance=ExtResource("2_ouiyo")]
 layout_mode = 2
 
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting3/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1615188875, 1544335546) index="0" unique_id=38948698]
+texture = ExtResource("5_37m0w")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting3/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1615188875, 1544335546) index="1" unique_id=655306775]
+text = "Language"
+
 [node name="AccSetting4" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1805838310 instance=ExtResource("2_ouiyo")]
 layout_mode = 2
+
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting4/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1805838310, 1544335546) index="0" unique_id=38948698]
+texture = ExtResource("6_8hvlb")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting4/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1805838310, 1544335546) index="1" unique_id=655306775]
+text = "Notifications"
 
 [node name="AccSetting5" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer" unique_id=1573105531 instance=ExtResource("2_ouiyo")]
 layout_mode = 2
 
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting5/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1573105531, 1544335546) index="0" unique_id=38948698]
+texture = ExtResource("7_4nosj")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting5/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(1573105531, 1544335546) index="1" unique_id=655306775]
+text = "Customer service"
+
 [node name="Nav" parent="MarginContainer/VBoxContainer" unique_id=769869833 instance=ExtResource("2_5tp8u")]
 layout_mode = 2
+
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting"]
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting2"]
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting3"]
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting4"]
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/PanelContainer2/MarginContainer/VBoxContainer/AccSetting5"]
