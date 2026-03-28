@@ -5,6 +5,18 @@
 [ext_resource type="Script" uid="uid://txtxjmogrpr2" path="res://scenes/menu.gd" id="2_4ytvr"]
 [ext_resource type="PackedScene" uid="uid://c0qblbhnuk34p" path="res://prefabs/menu_hotel.tscn" id="2_mae5d"]
 [ext_resource type="PackedScene" uid="uid://dfgfxkkqv1epf" path="res://prefabs/nav.tscn" id="3_mae5d"]
+[ext_resource type="ButtonGroup" uid="uid://dvgd7s0x6h2ey" path="res://scenes/search_sorting.tres" id="6_g3eks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
+bg_color = Color(0.79, 0.79, 0.79, 1)
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="Theme" id="Theme_4ytvr"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 
 [node name="root" type="Control" unique_id=1566512179]
 layout_mode = 3
@@ -13,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 1
 theme = ExtResource("1_4hy44")
 script = ExtResource("2_4ytvr")
 
@@ -49,7 +62,8 @@ text = "Booktel"
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1355644826]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=825359447]
+[node name="Search" type="LineEdit" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=825359447]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 placeholder_text = "Search"
@@ -87,3 +101,103 @@ layout_mode = 2
 
 [node name="Nav" parent="MarginContainer/VBoxContainer" unique_id=769869833 instance=ExtResource("3_mae5d")]
 layout_mode = 2
+
+[node name="SearchPopup" type="PanelContainer" parent="." unique_id=1513093455]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 32.0
+offset_top = 184.0
+offset_right = 508.0
+offset_bottom = 564.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ytvr")
+
+[node name="MarginContainer" type="MarginContainer" parent="SearchPopup" unique_id=1404456459]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SearchPopup/MarginContainer" unique_id=1471536793]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SearchPopup/MarginContainer/VBoxContainer" unique_id=865486650]
+layout_mode = 2
+theme = SubResource("Theme_4ytvr")
+
+[node name="Label" type="Label" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1741074000]
+layout_mode = 2
+text = "Sort by:"
+
+[node name="Space" type="Control" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=803421398]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1654921002]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_g3eks")
+text = "Popularity"
+
+[node name="Space2" type="Control" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2075505816]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=304512447]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_g3eks")
+text = "Rating"
+
+[node name="Space3" type="Control" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=759548270]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button3" type="Button" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer" unique_id=849718120]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_g3eks")
+text = "Price"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SearchPopup/MarginContainer/VBoxContainer" unique_id=137517658]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=997254647]
+layout_mode = 2
+text = "Rating:"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1387289890]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SearchRatingLabel" type="Label" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=201290618]
+unique_name_in_owner = true
+layout_mode = 2
+text = "⭐⭐⭐⭐⭐"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1423660022]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1396103922]
+layout_mode = 2
+text = "1"
+
+[node name="SearchRatingSlider" type="HSlider" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1427639629]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 5.0
+value = 5.0
+
+[node name="Label2" type="Label" parent="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=754674259]
+layout_mode = 2
+text = "5"
+
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/MarginContainer/Search" to="." method="_on_search_focus_entered"]
+[connection signal="value_changed" from="SearchPopup/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/SearchRatingSlider" to="." method="_on_search_rating_slider_value_changed"]

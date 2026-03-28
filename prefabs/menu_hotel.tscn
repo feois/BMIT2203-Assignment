@@ -11,7 +11,6 @@ layout_mode = 2
 [node name="Button" type="Button" parent="MarginContainer" unique_id=1331792852]
 unique_name_in_owner = true
 layout_mode = 2
-mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1872813107]
 layout_mode = 2
