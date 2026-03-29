@@ -40,7 +40,6 @@ func _on_filter_pressed() -> void:
 	if filter.button_pressed:
 		filter_popup.global_position = search_bar.global_position + Vector2(0, search_bar.size.y)
 		filter_popup.size.x = search_bar.size.x
-		filter_popup.size.y = get_viewport_rect().size.y * 0.5
 		filter_popup.grab_focus()
 	else:
 		filter_popup.visible = false

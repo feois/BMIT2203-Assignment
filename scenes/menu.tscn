@@ -8,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://dxqc3mw0rmvwx" path="res://scenes/circle_button.tres" id="4_13sgg"]
 [ext_resource type="Texture2D" uid="uid://81b4i5h7rojg" path="res://assets/filter.png" id="4_v86rl"]
 [ext_resource type="ButtonGroup" uid="uid://dvgd7s0x6h2ey" path="res://scenes/search_sorting.tres" id="6_g3eks"]
+[ext_resource type="Texture2D" uid="uid://bc5yvqg0yuh5y" path="res://assets/calendar.png" id="8_i6lef"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
 content_margin_left = 8.0
@@ -79,6 +80,7 @@ text = "Booktel"
 [node name="SearchBar" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=82686787]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Search" type="LineEdit" parent="MarginContainer/VBoxContainer/SearchBar" unique_id=825359447]
 unique_name_in_owner = true
@@ -150,13 +152,10 @@ layout_mode = 2
 [node name="FilterPopup" type="MarginContainer" parent="." unique_id=716215844]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 500.0
+offset_bottom = 309.0
 focus_mode = 1
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_top = 32
 
 [node name="PanelContainer" type="PanelContainer" parent="FilterPopup" unique_id=1513093455]
 layout_mode = 2
@@ -169,75 +168,109 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer" unique_id=1471536793]
+[node name="GridContainer" type="GridContainer" parent="FilterPopup/PanelContainer/MarginContainer" unique_id=8881169]
 layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=12978659]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/VBoxContainer" unique_id=158518229]
+layout_mode = 2
+text = "Date:"
+
+[node name="Label2" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/VBoxContainer" unique_id=1566958617]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Required"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=528248990]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=865486650]
+[node name="LineEdit" type="LineEdit" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer3" unique_id=1804633111]
 layout_mode = 2
-theme = SubResource("Theme_4ytvr")
+size_flags_horizontal = 3
+size_flags_vertical = 4
+right_icon = ExtResource("8_i6lef")
+icon_expand_mode = 1
 
-[node name="Label" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1741074000]
+[node name="Label2" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer3" unique_id=1089946619]
+layout_mode = 2
+text = "to"
+
+[node name="LineEdit2" type="LineEdit" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer3" unique_id=1191359148]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+right_icon = ExtResource("8_i6lef")
+icon_expand_mode = 1
+
+[node name="Label2" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=1741074000]
 layout_mode = 2
 text = "Sort by:"
 
-[node name="Space" type="Control" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=803421398]
+[node name="HBoxContainer" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=865486650]
 layout_mode = 2
-size_flags_horizontal = 3
+theme = SubResource("Theme_4ytvr")
 
-[node name="Button" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1654921002]
+[node name="Button" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer" unique_id=1654921002]
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("6_g3eks")
 text = "Popularity"
 
-[node name="Space2" type="Control" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2075505816]
+[node name="Space2" type="Control" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer" unique_id=2075505816]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button2" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=304512447]
+[node name="Button2" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer" unique_id=304512447]
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("6_g3eks")
 text = "Rating"
 
-[node name="Space3" type="Control" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=759548270]
+[node name="Space3" type="Control" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer" unique_id=759548270]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button3" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=849718120]
+[node name="Button3" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer" unique_id=849718120]
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("6_g3eks")
 text = "Price"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=137517658]
-layout_mode = 2
-theme_override_constants/separation = 32
-
-[node name="Label" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=997254647]
+[node name="Label3" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=997254647]
 layout_mode = 2
 text = "Rating:"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1387289890]
+[node name="HBoxContainer2" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=137517658]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2" unique_id=1387289890]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SearchRatingLabel" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=201290618]
+[node name="SearchRatingLabel" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer" unique_id=201290618]
 unique_name_in_owner = true
 layout_mode = 2
 text = "⭐⭐⭐⭐⭐"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1423660022]
+[node name="HBoxContainer" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer" unique_id=1423660022]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1396103922]
+[node name="Label" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1396103922]
 layout_mode = 2
 text = "1"
 
-[node name="SearchRatingSlider" type="HSlider" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1427639629]
+[node name="SearchRatingSlider" type="HSlider" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1427639629]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -246,9 +279,9 @@ min_value = 1.0
 max_value = 5.0
 value = 5.0
 
-[node name="Label2" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=754674259]
+[node name="Label2" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=754674259]
 layout_mode = 2
 text = "5"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SearchBar/MarginContainer/Filter" to="." method="_on_filter_pressed"]
-[connection signal="value_changed" from="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/SearchRatingSlider" to="." method="_on_search_rating_slider_value_changed"]
+[connection signal="value_changed" from="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer/HBoxContainer/SearchRatingSlider" to="." method="_on_search_rating_slider_value_changed"]
