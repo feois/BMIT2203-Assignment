@@ -1,0 +1,393 @@
+[gd_scene format=3 uid="uid://qtxqbp2kbo31"]
+
+[ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_dubw5"]
+[ext_resource type="Script" uid="uid://b53hudnpe62nu" path="res://scenes/booking.gd" id="2_dubw5"]
+[ext_resource type="PackedScene" uid="uid://bvh2tw5dlegbp" path="res://prefabs/back.tscn" id="3_ev3dr"]
+[ext_resource type="PackedScene" uid="uid://dkjt1w5vqurkd" path="res://scenes/hotel.tscn" id="3_vh6a2"]
+[ext_resource type="PackedScene" uid="uid://nmh2u4ic4qxg" path="res://prefabs/booking_option.tscn" id="5_mnex7"]
+[ext_resource type="Texture2D" uid="uid://bdo60graxdl1s" path="res://assets/icon.svg" id="5_yti2a"]
+[ext_resource type="Texture2D" uid="uid://d1unxy4r62jn1" path="res://assets/visa.png" id="7_ev3dr"]
+[ext_resource type="Texture2D" uid="uid://bi4128vc04aag" path="res://assets/fpx.png" id="8_w5gxu"]
+[ext_resource type="Texture2D" uid="uid://ccedcudwqeil6" path="res://assets/tng.svg" id="9_w5gxu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73gpd"]
+bg_color = Color(0.19999999, 0.8533333, 1, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.19999999, 0.8533333, 1, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qn43"]
+bg_color = Color(0, 0.8166666, 1, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0, 0.8166666, 1, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tltmg"]
+bg_color = Color(0.100000024, 0.8349999, 1, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.100000024, 0.8349999, 1, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="Theme" id="Theme_dubw5"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_73gpd")
+Button/styles/normal = SubResource("StyleBoxFlat_2qn43")
+Button/styles/pressed = SubResource("StyleBoxFlat_tltmg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6f56"]
+bg_color = Color(0.75398386, 0.75398386, 0.75398374, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_m6f56"]
+thickness = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ev3dr"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(1, 1, 1, 0.7490196)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_yti2a"]
+
+[node name="root" type="Control" unique_id=1566512179]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dubw5")
+script = ExtResource("2_dubw5")
+
+[node name="bg" type="ColorRect" parent="." unique_id=801382261]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6901961, 1, 0.7647059, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=333011158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1380902775]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Back" parent="MarginContainer/VBoxContainer" unique_id=171212407 instance=ExtResource("3_ev3dr")]
+layout_mode = 2
+scene = ExtResource("3_vh6a2")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1886726354]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1802303206]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_yti2a")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1712972277]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Name" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1872344794]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Shangri-lah Hotel"
+autowrap_mode = 3
+
+[node name="Rating" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=391601557]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5 ⭐⭐⭐⭐⭐"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=2132659975]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+scroll_hint_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=1462960343]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="BookingOption" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=145171084 instance=ExtResource("5_mnex7")]
+layout_mode = 2
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BookingOption/MarginContainer/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(145171084, 1849995131) index="1" unique_id=222132909]
+text = "Single room: RM 329"
+
+[node name="BookingOption2" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=979466791 instance=ExtResource("5_mnex7")]
+layout_mode = 2
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BookingOption2/MarginContainer/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(979466791, 1849995131) index="1" unique_id=222132909]
+text = "Double room: RM 359"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1800425141]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer" unique_id=1260959634]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1714169219]
+layout_mode = 2
+text = "Extra request: (may include charges)"
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=2001744488]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+scroll_smooth = true
+caret_blink = true
+
+[node name="Reserve" type="Button" parent="MarginContainer/VBoxContainer" unique_id=952771235]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_dubw5")
+theme_override_font_sizes/font_size = 32
+text = "Reserve"
+
+[node name="Popup" type="ColorRect" parent="." unique_id=1048021878]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+color = Color(0, 0, 0, 0.7490196)
+
+[node name="MarginContainer" type="MarginContainer" parent="Popup" unique_id=175491178]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="PanelContainer" type="PanelContainer" parent="Popup/MarginContainer" unique_id=60335793]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m6f56")
+
+[node name="MarginContainer" type="MarginContainer" parent="Popup/MarginContainer/PanelContainer" unique_id=1271118979]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 48
+
+[node name="Confirmation" type="VBoxContainer" parent="Popup/MarginContainer/PanelContainer/MarginContainer" unique_id=717091776]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Confirmation" unique_id=862639136]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Please confirm that your information are correct"
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Confirmation" unique_id=1242145282]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_m6f56")
+
+[node name="Label2" type="Label" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Confirmation" unique_id=2006722324]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Name: Soon Yik
+Hotel: Trivago
+Date: 1/2/3456 - 7/8/9012
+Room:
+1× Single room
+1x Double room
+
+Total: RM 9999.99"
+autowrap_mode = 3
+
+[node name="Space" type="Control" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Confirmation" unique_id=117970398]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ConfirmationButton" type="Button" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Confirmation" unique_id=2137650391]
+layout_mode = 2
+theme = SubResource("Theme_dubw5")
+theme_override_font_sizes/font_size = 32
+text = "Confirm"
+
+[node name="Payment" type="VBoxContainer" parent="Popup/MarginContainer/PanelContainer/MarginContainer" unique_id=223746512]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Payment" unique_id=818149686]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Please choose your payment method"
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Payment" unique_id=2033807343]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_m6f56")
+
+[node name="Label2" type="Label" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Payment" unique_id=1956967499]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Amount: RM 9999.99"
+autowrap_mode = 3
+
+[node name="CheckBox" type="CheckBox" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Payment" unique_id=466657429]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 16
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ev3dr")
+button_group = SubResource("ButtonGroup_yti2a")
+text = "Credit-Debit card"
+icon = ExtResource("7_ev3dr")
+icon_alignment = 2
+expand_icon = true
+
+[node name="CheckBox2" type="CheckBox" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Payment" unique_id=79130169]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 16
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ev3dr")
+button_group = SubResource("ButtonGroup_yti2a")
+text = "Online Banking"
+icon = ExtResource("8_w5gxu")
+icon_alignment = 2
+expand_icon = true
+
+[node name="CheckBox3" type="CheckBox" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Payment" unique_id=514019733]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 16
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ev3dr")
+button_group = SubResource("ButtonGroup_yti2a")
+text = "E-Wallet"
+icon = ExtResource("9_w5gxu")
+icon_alignment = 2
+expand_icon = true
+
+[node name="Space" type="Control" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Payment" unique_id=685142361]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PaymentButton" type="Button" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Payment" unique_id=861833065]
+layout_mode = 2
+theme = SubResource("Theme_dubw5")
+theme_override_font_sizes/font_size = 32
+text = "Confirm"
+
+[node name="Receipt" type="VBoxContainer" parent="Popup/MarginContainer/PanelContainer/MarginContainer" unique_id=1904792218]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Receipt" unique_id=1891940161]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Payment Successful"
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Receipt" unique_id=947733951]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_m6f56")
+
+[node name="Label2" type="Label" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Receipt" unique_id=372937249]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Confirmation itinerary will be sent to your email within 5min. For help, please contact 016-xxxxxxx."
+autowrap_mode = 3
+
+[node name="Space" type="Control" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Receipt" unique_id=1514032164]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ReceiptButton" type="Button" parent="Popup/MarginContainer/PanelContainer/MarginContainer/Receipt" unique_id=2129856203]
+layout_mode = 2
+theme = SubResource("Theme_dubw5")
+theme_override_font_sizes/font_size = 32
+text = "Close"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Reserve" to="." method="_on_reserve_pressed"]
+[connection signal="focus_entered" from="Popup" to="." method="_on_popup_focus_entered"]
+[connection signal="pressed" from="Popup/MarginContainer/PanelContainer/MarginContainer/Confirmation/ConfirmationButton" to="." method="_on_confirmation_button_pressed"]
+[connection signal="pressed" from="Popup/MarginContainer/PanelContainer/MarginContainer/Payment/PaymentButton" to="." method="_on_payment_button_pressed"]
+[connection signal="pressed" from="Popup/MarginContainer/PanelContainer/MarginContainer/Receipt/ReceiptButton" to="." method="_on_receipt_button_pressed"]
+
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BookingOption"]
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BookingOption2"]

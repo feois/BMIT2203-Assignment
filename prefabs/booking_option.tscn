@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://nmh2u4ic4qxg"]
+
+[ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_hoxya"]
+[ext_resource type="Texture2D" uid="uid://bdo60graxdl1s" path="res://assets/icon.svg" id="1_spe34"]
+[ext_resource type="Script" uid="uid://udpwsd066ge6" path="res://prefabs/booking_option.gd" id="2_cgjrr"]
+
+[node name="BookingOption" type="HBoxContainer" unique_id=145171084]
+theme = ExtResource("1_hoxya")
+script = ExtResource("2_cgjrr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1669720880]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_behavior_recursive = 1
+
+[node name="Button" type="Button" parent="MarginContainer" unique_id=2037893518]
+layout_mode = 2
+mouse_behavior_recursive = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=893100257]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer" unique_id=1849995131]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=545880996]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+texture = ExtResource("1_spe34")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=222132909]
+layout_mode = 2
+mouse_filter = 1
+text = "Option"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1903776661]
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="HBoxContainer" unique_id=603572132]
+layout_mode = 2
+
+[node name="Decrement" type="Button" parent="HBoxContainer/CenterContainer2" unique_id=1456466475]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+text = "-"
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1223216982]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=969816758]
+layout_mode = 2
+
+[node name="Increment" type="Button" parent="HBoxContainer/CenterContainer" unique_id=1909915819]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+text = "+"
+
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CenterContainer2/Decrement" to="." method="_on_decrement_pressed"]
+[connection signal="pressed" from="HBoxContainer/CenterContainer/Increment" to="." method="_on_increment_pressed"]

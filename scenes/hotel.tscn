@@ -213,6 +213,28 @@ Double Room: RM 359"
 [node name="FoldableText" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=980557313 instance=ExtResource("6_4fgw4")]
 custom_minimum_size = Vector2(0, 240)
 layout_mode = 2
+text = "Features:
+Facilities & Wellness
+24 Hours Restaurant (with Kid-Friendly Menus)
+Vending Machine
+Swimming Pool (10AM - 10PM)
+24 Hour Security guard
+Full-Service Spa (must be reserved)
+GYM Room (must be reserved)
+
+Attentive & Personalized Service
+Valet Parking
+24/7 Concierge
+Turndown Service
+Multi-lingual Staff
+
+Room Amenities & Comfort
+Luxurious Bathroom
+Coffee/Tea Stations
+Soundproofing
+Extra Beds / Sofa Beds (must be reserved)
+Laundry Service
+Baby Crib (must be reserved)"
 hmargin = 0
 vmargin = 0
 height = 240.0
@@ -223,14 +245,15 @@ theme_override_constants/separation = 32
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1785565973]
 layout_mode = 2
+mouse_behavior_recursive = 1
 
 [node name="Favorite" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1230426030]
 layout_mode = 2
+mouse_behavior_recursive = 2
 theme = ExtResource("8_ugci0")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=447449107]
 layout_mode = 2
-mouse_filter = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
@@ -239,7 +262,6 @@ theme_override_constants/margin_bottom = 12
 [node name="FavTexture" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer" unique_id=1788774847]
 unique_name_in_owner = true
 layout_mode = 2
-mouse_filter = 2
 texture = ExtResource("7_0tfin")
 expand_mode = 3
 

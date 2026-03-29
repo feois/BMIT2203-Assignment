@@ -1,27 +1,25 @@
 [gd_scene format=3 uid="uid://c375gtmcbjatd"]
 
 [ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_37wl2"]
-[ext_resource type="Script" uid="uid://dq2ksxkm13rnm" path="res://scenes/register.gd" id="1_r642n"]
+[ext_resource type="Script" uid="uid://d3sj2mxrq7ygh" path="res://scenes/login.gd" id="2_th0y5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cau7c"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_th0y5"]
+content_margin_left = 48.0
+content_margin_top = 16.0
+content_margin_right = 48.0
+content_margin_bottom = 16.0
 bg_color = Color(0.61339027, 0.61339027, 0.61339027, 1)
-border_width_left = 48
-border_width_top = 16
-border_width_right = 48
-border_width_bottom = 16
-border_color = Color(0.6117647, 0.6117647, 0.6117647, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3n56f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul2ju"]
+content_margin_left = 48.0
+content_margin_top = 16.0
+content_margin_right = 48.0
+content_margin_bottom = 16.0
 bg_color = Color(0.75819194, 0.75819176, 0.7581918, 1)
-border_width_left = 48
-border_width_top = 16
-border_width_right = 48
-border_width_bottom = 16
-border_color = Color(0.75686276, 0.75686276, 0.75686276, 1)
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
@@ -35,7 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_37wl2")
-script = ExtResource("1_r642n")
+script = ExtResource("2_th0y5")
 
 [node name="bg" type="ColorRect" parent="." unique_id=801382261]
 layout_mode = 1
@@ -129,12 +127,12 @@ theme_override_font_sizes/font_size = 24
 [node name="Control" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=1563057059]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Control" unique_id=1928243184]
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Control" unique_id=94001217]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_cau7c")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cau7c")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3n56f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_th0y5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_th0y5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ul2ju")
 text = "Register"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Control/Button" to="." method="_on_login_pressed"]

@@ -9,7 +9,6 @@ extends Control
 @export var height: float
 @export var gradient_height: float
 
-@onready var control: Control = %VBoxContainer
 @onready var margin: MarginContainer = %MarginContainer
 @onready var label: Label = %Label
 @onready var gradient: TextureRect = %TextureRect
@@ -23,7 +22,7 @@ func _process(_delta: float) -> void:
 	margin.add_theme_constant_override("margin_right", hmargin)
 	margin.add_theme_constant_override("margin_top", vmargin)
 	margin.add_theme_constant_override("margin_bottom", vmargin)
-	custom_minimum_size.y = control.size.y if expanded else height
+	custom_minimum_size.y = margin.size.y if expanded else height
 	gradient.custom_minimum_size.y = gradient_height
 
 
