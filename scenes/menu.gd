@@ -4,15 +4,13 @@ extends Control
 @onready var scene: PackedScene = load("res://scenes/hotel.tscn")
 @onready var hotels: Control = %Hotels
 @onready var search: LineEdit = %Search
-@onready var search_popup: PanelContainer = %SearchPopup
-
-
-var focused: Control = null
-var popup := false
+@onready var search_bar: Control = %SearchBar
+@onready var filter: Button = %Filter
+@onready var filter_popup: Control = %FilterPopup
 
 
 func _ready() -> void:
-	search_popup.visible = false
+	filter_popup.visible = false
 	
 	for hotel in hotels.get_children():
 		var button := hotel.get_node(^"%Button") as Button
@@ -20,11 +18,12 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	var f := get_viewport().gui_get_focus_owner()
+	var focused := get_viewport().gui_get_focus_owner()
 	
-	if f != focused:
-		focused = f
-		focus_changed(focused)
+	if focused != filter:
+		filter_popup.visible = focused and (focused == filter_popup or filter_popup.is_ancestor_of(focused))
+	
+	filter.button_pressed = filter_popup.visible
 
 
 func _gui_input(event: InputEvent) -> void:
@@ -33,15 +32,15 @@ func _gui_input(event: InputEvent) -> void:
 		accept_event()
 
 
-func focus_changed(ui: Control) -> void:
-	search_popup.visible = ui and (ui in [search, search_popup] or search_popup.is_ancestor_of(ui))
-
-
-func _on_search_focus_entered() -> void:
-	search_popup.global_position = search.global_position + Vector2(0, search.size.y)
-	search_popup.size.x = search.size.x
-	search_popup.size.y = get_viewport_rect().size.y * 0.5
-
-
 func _on_search_rating_slider_value_changed(value: float) -> void:
 	%SearchRatingLabel.text = "⭐".repeat(int(value))
+
+
+func _on_filter_pressed() -> void:
+	if filter.button_pressed:
+		filter_popup.global_position = search_bar.global_position + Vector2(0, search_bar.size.y)
+		filter_popup.size.x = search_bar.size.x
+		filter_popup.size.y = get_viewport_rect().size.y * 0.5
+		filter_popup.grab_focus()
+	else:
+		filter_popup.visible = false

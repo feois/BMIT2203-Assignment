@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cdv6xogkakcil" path="res://assets/location.png" id="4_2c7jt"]
 [ext_resource type="PackedScene" uid="uid://gyvj0bph01ot" path="res://prefabs/foldable_text.tscn" id="6_4fgw4"]
 [ext_resource type="Texture2D" uid="uid://br6w7lsobfujs" path="res://assets/bookmark.png" id="7_0tfin"]
+[ext_resource type="Theme" uid="uid://dxqc3mw0rmvwx" path="res://scenes/circle_button.tres" id="8_ugci0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4fgw4"]
 
@@ -54,20 +55,6 @@ Button/styles/focus = SubResource("StyleBoxEmpty_4fgw4")
 Button/styles/hover = SubResource("StyleBoxFlat_0tfin")
 Button/styles/normal = SubResource("StyleBoxFlat_fwmit")
 Button/styles/pressed = SubResource("StyleBoxFlat_ugci0")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1cbbl"]
-bg_color = Color(1, 1, 1, 0.7490196)
-corner_radius_top_left = 256
-corner_radius_top_right = 256
-corner_radius_bottom_right = 256
-corner_radius_bottom_left = 256
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dq6b4"]
-bg_color = Color(1, 1, 1, 0.49803922)
-corner_radius_top_left = 256
-corner_radius_top_right = 256
-corner_radius_bottom_right = 256
-corner_radius_bottom_left = 256
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qn43"]
 bg_color = Color(0, 0.8166666, 1, 1)
@@ -239,8 +226,7 @@ layout_mode = 2
 
 [node name="Favorite" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1230426030]
 layout_mode = 2
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1cbbl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dq6b4")
+theme = ExtResource("8_ugci0")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=447449107]
 layout_mode = 2
