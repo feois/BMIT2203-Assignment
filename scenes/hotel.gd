@@ -14,3 +14,7 @@ var is_faved := false
 func _on_favorite_pressed() -> void:
 	fav.texture = unfaved if is_faved else faved
 	is_faved = !is_faved
+
+
+func _on_reserve_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/booking.tscn")

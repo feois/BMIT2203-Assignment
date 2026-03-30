@@ -139,6 +139,7 @@ theme_override_constants/separation = 32
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("3_nypwa")
+expand_mode = 3
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1712972277]
@@ -265,7 +266,7 @@ layout_mode = 2
 texture = ExtResource("7_0tfin")
 expand_mode = 3
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=952771235]
+[node name="Reserve" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=952771235]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -278,3 +279,4 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_73gpd")
 text = "Reserve"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Favorite" to="." method="_on_favorite_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Reserve" to="." method="_on_reserve_pressed"]
