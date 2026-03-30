@@ -101,6 +101,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_frj80")
 script = ExtResource("2_fwmit")
+link = &"https://maps.app.goo.gl/tBCdPgGPEwRSx1Yh9"
 
 [node name="bg" type="ColorRect" parent="." unique_id=801382261]
 layout_mode = 1
@@ -159,28 +160,43 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "5 ⭐⭐⭐⭐⭐"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1231603423]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1007093806]
+layout_mode = 2
+mouse_behavior_recursive = 1
+
+[node name="Address" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=112465342]
+layout_mode = 2
+mouse_behavior_recursive = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=455962172]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer" unique_id=1231603423]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=780528357]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer3" unique_id=780528357]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("4_2c7jt")
 expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1778039881]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer3" unique_id=1778039881]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Address" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer" unique_id=2041900784]
+[node name="Address" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer3/VBoxContainer" unique_id=2041900784]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "122, Jln Batu, Kuala Lumpur, 50250 Kuala Lumpur,  Wilayah Persekutuan Kuala Lumpur"
 autowrap_mode = 3
 
-[node name="Contact" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer" unique_id=190943812]
+[node name="Contact" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer3/VBoxContainer" unique_id=190943812]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Contact: +60 6-553 4332"
@@ -278,5 +294,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_tltmg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_73gpd")
 text = "Reserve"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Address" to="." method="_on_address_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Favorite" to="." method="_on_favorite_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Reserve" to="." method="_on_reserve_pressed"]

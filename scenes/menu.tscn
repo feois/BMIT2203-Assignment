@@ -151,6 +151,7 @@ layout_mode = 2
 
 [node name="FilterPopup" type="MarginContainer" parent="." unique_id=716215844]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_right = 500.0
 offset_bottom = 309.0
