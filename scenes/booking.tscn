@@ -5,8 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bvh2tw5dlegbp" path="res://prefabs/back.tscn" id="3_ev3dr"]
 [ext_resource type="PackedScene" uid="uid://dkjt1w5vqurkd" path="res://scenes/hotel.tscn" id="3_vh6a2"]
 [ext_resource type="PackedScene" uid="uid://nmh2u4ic4qxg" path="res://prefabs/booking_option.tscn" id="5_mnex7"]
-[ext_resource type="Texture2D" uid="uid://bdo60graxdl1s" path="res://assets/icon.svg" id="5_yti2a"]
+[ext_resource type="Texture2D" uid="uid://47dof1visgpe" path="res://assets/room1.jpg" id="5_yti2a"]
 [ext_resource type="Texture2D" uid="uid://d1unxy4r62jn1" path="res://assets/visa.png" id="7_ev3dr"]
+[ext_resource type="Texture2D" uid="uid://dpvkl870sehye" path="res://assets/room2.jpg" id="7_jm607"]
+[ext_resource type="Texture2D" uid="uid://bcw87op0uj88y" path="res://assets/room4.jpg" id="8_jm607"]
 [ext_resource type="Texture2D" uid="uid://bi4128vc04aag" path="res://assets/fpx.png" id="8_w5gxu"]
 [ext_resource type="Texture2D" uid="uid://ccedcudwqeil6" path="res://assets/tng.svg" id="9_w5gxu"]
 
@@ -121,9 +123,11 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1802303206]
+custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("5_yti2a")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1712972277]
@@ -135,13 +139,13 @@ size_flags_stretch_ratio = 2.0
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Shangri-lah Hotel"
+text = "Alia Premier KLCC"
 autowrap_mode = 3
 
 [node name="Rating" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=391601557]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "5 ⭐⭐⭐⭐⭐"
+text = "4 ⭐⭐⭐⭐"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=2132659975]
 layout_mode = 2
@@ -158,14 +162,22 @@ theme_override_constants/separation = 32
 [node name="BookingOption" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=145171084 instance=ExtResource("5_mnex7")]
 layout_mode = 2
 
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BookingOption/MarginContainer/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(145171084, 1849995131) index="0" unique_id=545880996]
+custom_minimum_size = Vector2(96, 96)
+texture = ExtResource("7_jm607")
+
 [node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BookingOption/MarginContainer/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(145171084, 1849995131) index="1" unique_id=222132909]
-text = "Single room: RM 329"
+text = "Studio Twin: RM 159"
 
 [node name="BookingOption2" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=979466791 instance=ExtResource("5_mnex7")]
 layout_mode = 2
 
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BookingOption2/MarginContainer/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(979466791, 1849995131) index="0" unique_id=545880996]
+custom_minimum_size = Vector2(96, 96)
+texture = ExtResource("8_jm607")
+
 [node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/BookingOption2/MarginContainer/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(979466791, 1849995131) index="1" unique_id=222132909]
-text = "Double room: RM 359"
+text = "Family Junior Suite: RM 424"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1800425141]
 layout_mode = 2

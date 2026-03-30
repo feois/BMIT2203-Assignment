@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0qblbhnuk34p"]
 
-[ext_resource type="Texture2D" uid="uid://bdo60graxdl1s" path="res://assets/icon.svg" id="1_24tlk"]
 [ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_80hdx"]
+[ext_resource type="Texture2D" uid="uid://47dof1visgpe" path="res://assets/room1.jpg" id="2_80hdx"]
 
 [node name="MenuHotel" type="CenterContainer" unique_id=273911559]
 size_flags_horizontal = 3
@@ -28,16 +28,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=407174072]
+custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
-texture = ExtResource("1_24tlk")
-stretch_mode = 2
+texture = ExtResource("2_80hdx")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=454807334]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 mouse_filter = 1
-text = "Shangri-lah Hotel
-⭐⭐⭐⭐⭐
-RM329 - RM 389"
+text = "Alia Premier KLCC
+⭐⭐⭐⭐
+RM159 - RM 432"
 horizontal_alignment = 1
 autowrap_mode = 3

@@ -8,7 +8,10 @@
 [ext_resource type="Theme" uid="uid://dxqc3mw0rmvwx" path="res://scenes/circle_button.tres" id="4_13sgg"]
 [ext_resource type="Texture2D" uid="uid://81b4i5h7rojg" path="res://assets/filter.png" id="4_v86rl"]
 [ext_resource type="ButtonGroup" uid="uid://dvgd7s0x6h2ey" path="res://scenes/search_sorting.tres" id="6_g3eks"]
+[ext_resource type="Texture2D" uid="uid://dh4s21i68jg4m" path="res://assets/hotel1.jpg" id="7_70i5f"]
 [ext_resource type="Texture2D" uid="uid://bc5yvqg0yuh5y" path="res://assets/calendar.png" id="8_i6lef"]
+[ext_resource type="Texture2D" uid="uid://dj3yc0s5d6jvh" path="res://assets/hotel2.jpg" id="8_ufwb2"]
+[ext_resource type="Texture2D" uid="uid://dqofi18bg4dla" path="res://assets/hotel3.jpg" id="9_6cdou"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
 content_margin_left = 8.0
@@ -137,11 +140,35 @@ layout_mode = 2
 [node name="MenuHotel2" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels" unique_id=1475650046 instance=ExtResource("2_mae5d")]
 layout_mode = 2
 
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel2/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1475650046, 838905656) index="0" unique_id=407174072]
+texture = ExtResource("7_70i5f")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel2/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1475650046, 838905656) index="1" unique_id=454807334]
+text = "Platinum Suites
+⭐⭐⭐⭐⭐
+RM 255 - RM 510"
+
 [node name="MenuHotel3" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels" unique_id=1843355641 instance=ExtResource("2_mae5d")]
 layout_mode = 2
 
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel3/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1843355641, 838905656) index="0" unique_id=407174072]
+texture = ExtResource("8_ufwb2")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel3/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1843355641, 838905656) index="1" unique_id=454807334]
+text = "Luxe Suites Home
+⭐⭐⭐⭐
+RM 116 - RM 387"
+
 [node name="MenuHotel4" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels" unique_id=1883139372 instance=ExtResource("2_mae5d")]
 layout_mode = 2
+
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel4/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1883139372, 838905656) index="0" unique_id=407174072]
+texture = ExtResource("9_6cdou")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel4/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1883139372, 838905656) index="1" unique_id=454807334]
+text = "AXON Residences Kuala Lumpur
+⭐⭐⭐
+RM 169 - RM 475"
 
 [node name="MenuHotel5" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels" unique_id=365573208 instance=ExtResource("2_mae5d")]
 layout_mode = 2
@@ -286,3 +313,8 @@ text = "5"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SearchBar/MarginContainer/Filter" to="." method="_on_filter_pressed"]
 [connection signal="value_changed" from="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer/HBoxContainer/SearchRatingSlider" to="." method="_on_search_rating_slider_value_changed"]
+
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel"]
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel2"]
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel3"]
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel4"]
