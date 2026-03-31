@@ -43,3 +43,7 @@ func _on_filter_pressed() -> void:
 		filter_popup.grab_focus()
 	else:
 		filter_popup.visible = false
+
+
+func _on_date_hide() -> void:
+	filter_popup.grab_focus()
