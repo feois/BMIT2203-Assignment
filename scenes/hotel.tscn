@@ -8,7 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://47dof1visgpe" path="res://assets/room1.jpg" id="5_ugci0"]
 [ext_resource type="PackedScene" uid="uid://gyvj0bph01ot" path="res://prefabs/foldable_text.tscn" id="6_4fgw4"]
 [ext_resource type="Texture2D" uid="uid://br6w7lsobfujs" path="res://assets/bookmark.png" id="7_0tfin"]
+[ext_resource type="PackedScene" uid="uid://cpbyfito8edxw" path="res://prefabs/booking_option_link.tscn" id="7_2qn43"]
+[ext_resource type="Texture2D" uid="uid://dpvkl870sehye" path="res://assets/room2.jpg" id="8_dq6b4"]
 [ext_resource type="Theme" uid="uid://dxqc3mw0rmvwx" path="res://scenes/circle_button.tres" id="8_ugci0"]
+[ext_resource type="Texture2D" uid="uid://bcw87op0uj88y" path="res://assets/room4.jpg" id="9_tltmg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4fgw4"]
 
@@ -222,11 +225,31 @@ text = "Description:
 Alia Premier KLCC in Kuala Lumpur offers a convenient location with Petronas Twin Towers a 6-minute walk away and Suria KLCC 2297 feet nearby. The Kuala Lumpur Convention Center lies less than 0.6 mi from the property."
 autowrap_mode = 3
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1637114459]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=99933465]
 layout_mode = 2
-text = "Price
-Studio Twin: RM 159
-Family Junior Suite: RM 424"
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=1005851257]
+layout_mode = 2
+text = "Price:"
+
+[node name="BookingOptionLink" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=54013787 instance=ExtResource("7_2qn43")]
+layout_mode = 2
+
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer/BookingOptionLink/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(54013787, 683279036) index="0" unique_id=1942843562]
+texture = ExtResource("8_dq6b4")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer/BookingOptionLink/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(54013787, 683279036) index="1" unique_id=1590273644]
+text = "Studio Twin: RM 159
+"
+
+[node name="BookingOptionLink2" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer" unique_id=808711027 instance=ExtResource("7_2qn43")]
+layout_mode = 2
+
+[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer/BookingOptionLink2/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(808711027, 683279036) index="0" unique_id=1942843562]
+texture = ExtResource("9_tltmg")
+
+[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer/BookingOptionLink2/MarginContainer/HBoxContainer" parent_id_path=PackedInt32Array(808711027, 683279036) index="1" unique_id=1590273644]
+text = "Family Junior Suite: RM 424"
 
 [node name="FoldableText" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=980557313 instance=ExtResource("6_4fgw4")]
 custom_minimum_size = Vector2(0, 240)
@@ -298,3 +321,6 @@ text = "Reserve"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Address" to="." method="_on_address_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/Favorite" to="." method="_on_favorite_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Reserve" to="." method="_on_reserve_pressed"]
+
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer/BookingOptionLink"]
+[editable path="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/VBoxContainer/BookingOptionLink2"]
