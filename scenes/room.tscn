@@ -2,9 +2,11 @@
 
 [ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_y72nq"]
 [ext_resource type="PackedScene" uid="uid://bvh2tw5dlegbp" path="res://prefabs/back.tscn" id="2_0dyi5"]
-[ext_resource type="PackedScene" uid="uid://dkjt1w5vqurkd" path="res://scenes/hotel.tscn" id="3_gyfg6"]
-[ext_resource type="Texture2D" uid="uid://bdo60graxdl1s" path="res://assets/icon.svg" id="4_mlksw"]
+[ext_resource type="PackedScene" uid="uid://qtxqbp2kbo31" path="res://scenes/booking.tscn" id="3_qvc4m"]
+[ext_resource type="Texture2D" uid="uid://dpvkl870sehye" path="res://assets/room2.jpg" id="4_qvc4m"]
 [ext_resource type="PackedScene" uid="uid://gyvj0bph01ot" path="res://prefabs/foldable_text.tscn" id="5_66y8n"]
+[ext_resource type="Texture2D" uid="uid://47dof1visgpe" path="res://assets/room1.jpg" id="5_qvc4m"]
+[ext_resource type="Texture2D" uid="uid://b1rq5crgrodyl" path="res://assets/room3.jpg" id="6_7dqbv"]
 
 [node name="root" type="Control" unique_id=1566512179]
 layout_mode = 3
@@ -42,7 +44,7 @@ theme_override_constants/separation = 32
 
 [node name="Back" parent="MarginContainer/VBoxContainer" unique_id=171212407 instance=ExtResource("2_0dyi5")]
 layout_mode = 2
-scene = ExtResource("3_gyfg6")
+scene = ExtResource("3_qvc4m")
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1283157540]
 layout_mode = 2
@@ -57,19 +59,20 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2" unique_id=1802303206]
 layout_mode = 2
-texture = ExtResource("4_mlksw")
+texture = ExtResource("4_qvc4m")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2" unique_id=1527838070]
+texture_filter = 4
 layout_mode = 2
-texture = ExtResource("4_mlksw")
+texture = ExtResource("5_qvc4m")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer2/HBoxContainer2" unique_id=2061133006]
 layout_mode = 2
-texture = ExtResource("4_mlksw")
+texture = ExtResource("6_7dqbv")
 expand_mode = 3
 stretch_mode = 4
 
@@ -90,12 +93,24 @@ theme_override_constants/separation = 32
 custom_minimum_size = Vector2(0, 256)
 layout_mode = 2
 text = "Features:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+Sleeping: Crib/Baby cot (available on request), Bunk beds, Sofa bed, Interconnecting rooms.
+
+Dining: High chair, Electric kettle (for formula), Microwave, Kids' cutlery/plates.
+
+Entertainment: Kids' TV channels, Board games/Puzzles, Game console, Dedicated play area.
+
+Convenience: Laundry facilities (Washer/Dryer), Bathtub (easier for washing toddlers than a shower), Diaper disposal bin."
 height = 256.0
 
 [node name="FoldableText2" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=757355733 instance=ExtResource("5_66y8n")]
 custom_minimum_size = Vector2(0, 256)
 layout_mode = 2
 text = "Accessibility:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+Safety: Socket covers/protectors, Corner guards on furniture, Window locks/Safety catches, Safety gates for stairs.
+
+Mobility: Stroller-accessible entrances, Wide elevators, Ramps (no-step access for strollers).
+
+Bathroom Safety: Non-slip bath mats, Step stools for the sink.
+
+Allergy-Friendly: Hypoallergenic linens, Carpet-free floors (hardwood or parquet) to reduce dust mites."
 height = 256.0

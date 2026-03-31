@@ -29,4 +29,4 @@ func _on_payment_button_pressed() -> void:
 
 
 func _on_receipt_button_pressed() -> void:
-	popup.visible = false
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

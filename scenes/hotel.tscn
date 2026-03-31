@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bvh2tw5dlegbp" path="res://prefabs/back.tscn" id="2_2c7jt"]
 [ext_resource type="Script" uid="uid://jfk2kwblopjg" path="res://scenes/hotel.gd" id="2_fwmit"]
 [ext_resource type="PackedScene" uid="uid://dq73v4r45qkjw" path="res://scenes/menu.tscn" id="3_4fgw4"]
-[ext_resource type="Texture2D" uid="uid://bdo60graxdl1s" path="res://assets/icon.svg" id="3_nypwa"]
 [ext_resource type="Texture2D" uid="uid://cdv6xogkakcil" path="res://assets/location.png" id="4_2c7jt"]
+[ext_resource type="Texture2D" uid="uid://47dof1visgpe" path="res://assets/room1.jpg" id="5_ugci0"]
 [ext_resource type="PackedScene" uid="uid://gyvj0bph01ot" path="res://prefabs/foldable_text.tscn" id="6_4fgw4"]
 [ext_resource type="Texture2D" uid="uid://br6w7lsobfujs" path="res://assets/bookmark.png" id="7_0tfin"]
 [ext_resource type="Theme" uid="uid://dxqc3mw0rmvwx" path="res://scenes/circle_button.tres" id="8_ugci0"]
@@ -101,7 +101,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_frj80")
 script = ExtResource("2_fwmit")
-link = &"https://maps.app.goo.gl/tBCdPgGPEwRSx1Yh9"
+link = &"https://maps.app.goo.gl/dA3phdhDcX7MqCXp6"
 
 [node name="bg" type="ColorRect" parent="." unique_id=801382261]
 layout_mode = 1
@@ -137,10 +137,11 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1802303206]
+custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("3_nypwa")
-expand_mode = 3
+texture = ExtResource("5_ugci0")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1712972277]
@@ -152,13 +153,13 @@ size_flags_stretch_ratio = 2.0
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Shangri-lah Hotel"
+text = "Alia Premier KLCC"
 autowrap_mode = 3
 
 [node name="Rating" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=391601557]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "5 ⭐⭐⭐⭐⭐"
+text = "4 ⭐⭐⭐⭐"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1007093806]
 layout_mode = 2
@@ -180,6 +181,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer3" unique_id=780528357]
+modulate = Color(0.6901961, 1, 0.7647059, 1)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("4_2c7jt")
@@ -193,7 +195,7 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "122, Jln Batu, Kuala Lumpur, 50250 Kuala Lumpur,  Wilayah Persekutuan Kuala Lumpur"
+text = "3rd Floor, 138, Jln Ampang, Kampung Baru, 50450 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
 autowrap_mode = 3
 
 [node name="Contact" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer3/VBoxContainer" unique_id=190943812]
@@ -218,14 +220,14 @@ theme_override_constants/separation = 32
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
 text = "Description: 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+Alia Premier KLCC in Kuala Lumpur offers a convenient location with Petronas Twin Towers a 6-minute walk away and Suria KLCC 2297 feet nearby. The Kuala Lumpur Convention Center lies less than 0.6 mi from the property."
 autowrap_mode = 3
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1637114459]
 layout_mode = 2
 text = "Price
-Single Room: RM 329
-Double Room: RM 359"
+Studio Twin: RM 159
+Family Junior Suite: RM 424"
 
 [node name="FoldableText" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=980557313 instance=ExtResource("6_4fgw4")]
 custom_minimum_size = Vector2(0, 240)
