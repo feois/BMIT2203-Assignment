@@ -5,6 +5,10 @@
 [ext_resource type="Script" uid="uid://udpwsd066ge6" path="res://prefabs/booking_option.gd" id="2_cgjrr"]
 
 [node name="BookingOption" type="HBoxContainer" unique_id=145171084]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
 theme = ExtResource("1_hoxya")
 script = ExtResource("2_cgjrr")
 
@@ -35,9 +39,12 @@ texture = ExtResource("1_spe34")
 expand_mode = 5
 
 [node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=222132909]
+custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
+size_flags_horizontal = 3
 mouse_filter = 1
 text = "Option"
+autowrap_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1903776661]
 layout_mode = 2
