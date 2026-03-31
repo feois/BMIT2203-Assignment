@@ -232,7 +232,9 @@ func _on_button_pressed():
 	else:
 		date_picker_panel.visible = true
 		
-		var new_pos = self.global_position + date_picker_button.size + Vector2(-date_picker_panel.size.x, 16)
+		var new_pos = self.global_position
+		new_pos.x += (date_picker_button.size.x - date_picker_panel.size.x) / 2
+		new_pos.y += date_picker_button.size.y + 16
 		date_picker_panel.position = new_pos
 		choose_month_year.position = new_pos
 
