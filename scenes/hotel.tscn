@@ -181,6 +181,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer3" unique_id=780528357]
+modulate = Color(0.6901961, 1, 0.7647059, 1)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("4_2c7jt")
