@@ -33,6 +33,7 @@ corner_radius_bottom_left = 16
 [resource]
 Button/styles/focus = SubResource("StyleBoxEmpty_4hy44")
 Button/styles/hover = SubResource("StyleBoxFlat_ytr4m")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_ytr4m")
 Button/styles/normal = SubResource("StyleBoxEmpty_mae5d")
 Button/styles/pressed = SubResource("StyleBoxFlat_l48gv")
 Label/colors/font_color = Color(0, 0, 0, 1)
