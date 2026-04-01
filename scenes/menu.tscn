@@ -7,11 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://dfgfxkkqv1epf" path="res://prefabs/nav.tscn" id="3_mae5d"]
 [ext_resource type="Theme" uid="uid://dxqc3mw0rmvwx" path="res://scenes/circle_button.tres" id="4_13sgg"]
 [ext_resource type="Texture2D" uid="uid://81b4i5h7rojg" path="res://assets/filter.png" id="4_v86rl"]
-[ext_resource type="ButtonGroup" uid="uid://dvgd7s0x6h2ey" path="res://scenes/search_sorting.tres" id="6_g3eks"]
 [ext_resource type="Texture2D" uid="uid://47dof1visgpe" path="res://assets/room1.jpg" id="8_6cdou"]
 [ext_resource type="Texture2D" uid="uid://dj3yc0s5d6jvh" path="res://assets/hotel2.jpg" id="8_ufwb2"]
 [ext_resource type="Texture2D" uid="uid://dqofi18bg4dla" path="res://assets/hotel3.jpg" id="9_6cdou"]
 [ext_resource type="PackedScene" uid="uid://dubkw6fn2rh5c" path="res://addons/DatePickerFiles/CalendarPop/DatePickerPanel.tscn" id="10_70i5f"]
+[ext_resource type="Shader" uid="uid://d1s2l27k6m57d" path="res://scenes/menu.gdshader" id="12_6cdou"]
+[ext_resource type="Script" uid="uid://cuk5d70mheggb" path="res://prefabs/menu_rating.gd" id="13_7jp70"]
+[ext_resource type="Texture2D" uid="uid://oksmk2cavdue" path="res://assets/drop_down.svg" id="13_i42df"]
+[ext_resource type="Texture2D" uid="uid://cxwa4vyc2somw" path="res://assets/check.svg" id="14_7jp70"]
+[ext_resource type="Texture2D" uid="uid://be6ajdiwdk5ce" path="res://assets/unchecked.svg" id="15_mxgkd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3eks"]
 content_margin_left = 8.0
@@ -29,6 +33,9 @@ corner_radius_bottom_left = 16
 [sub_resource type="Theme" id="Theme_i6lef"]
 Button/font_sizes/font_size = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxgkd"]
+bg_color = Color(0.48299998, 0.7, 0.53363335, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
 bg_color = Color(0.79, 0.79, 0.79, 1)
 corner_radius_top_left = 32
@@ -36,11 +43,43 @@ corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[sub_resource type="Theme" id="Theme_4ytvr"]
-Button/colors/font_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7jp70"]
+shader = ExtResource("12_6cdou")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxgkd"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jp70"]
+bg_color = Color(0.65834, 0.65834, 0.6583398, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i42df"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.7204674, 0.7204675, 0.7204674, 1)
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Theme" id="Theme_7jp70"]
+PopupMenu/colors/font_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_hover_color = Color(0, 0, 0, 1)
+PopupMenu/constants/v_separation = 16
+PopupMenu/icons/radio_checked = ExtResource("14_7jp70")
+PopupMenu/icons/radio_unchecked = ExtResource("15_mxgkd")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_7jp70")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_i42df")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5lg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [node name="root" type="Control" unique_id=1566512179]
 layout_mode = 3
@@ -151,24 +190,25 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=2104096804]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1132764736]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_mxgkd")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1856209915]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1856209915]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/scrollbar_h_separation = 8
 horizontal_scroll_mode = 0
 scroll_hint_mode = 1
 
-[node name="Hotels" type="GridContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer" unique_id=423356068]
+[node name="Hotels" type="GridContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer" unique_id=423356068]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 2
 
-[node name="MenuHotel" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Hotels" unique_id=273911559 instance=ExtResource("2_mae5d")]
+[node name="MenuHotel" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/Hotels" unique_id=273911559 instance=ExtResource("2_mae5d")]
 layout_mode = 2
 size_flags_vertical = 0
 image = ExtResource("8_6cdou")
@@ -177,7 +217,7 @@ rating = 4.0
 price_min = 159
 price_max = 432
 
-[node name="MenuHotel4" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Hotels" unique_id=1883139372 instance=ExtResource("2_mae5d")]
+[node name="MenuHotel4" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/Hotels" unique_id=1883139372 instance=ExtResource("2_mae5d")]
 layout_mode = 2
 size_flags_vertical = 0
 image = ExtResource("9_6cdou")
@@ -186,7 +226,7 @@ rating = 3.0
 price_min = 169
 price_max = 475
 
-[node name="MenuHotel2" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Hotels" unique_id=1475650046 instance=ExtResource("2_mae5d")]
+[node name="MenuHotel2" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/Hotels" unique_id=1475650046 instance=ExtResource("2_mae5d")]
 layout_mode = 2
 size_flags_vertical = 0
 image = ExtResource("8_ufwb2")
@@ -194,7 +234,7 @@ hotel_name = "Platinum Suites"
 price_min = 255
 price_max = 510
 
-[node name="MenuHotel3" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Hotels" unique_id=1843355641 instance=ExtResource("2_mae5d")]
+[node name="MenuHotel3" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/Hotels" unique_id=1843355641 instance=ExtResource("2_mae5d")]
 layout_mode = 2
 size_flags_vertical = 0
 image = ExtResource("8_ufwb2")
@@ -203,7 +243,7 @@ rating = 4.0
 price_min = 116
 price_max = 387
 
-[node name="NoDate" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=589499142]
+[node name="NoDate" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=589499142]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(1, 1)
@@ -218,12 +258,11 @@ layout_mode = 2
 
 [node name="FilterPopup" type="MarginContainer" parent="." unique_id=716215844]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
-offset_left = 15.0
-offset_top = 304.0
-offset_right = 474.0
-offset_bottom = 542.0
+offset_left = 44.0
+offset_top = 346.0
+offset_right = 503.0
+offset_bottom = 610.0
 focus_mode = 1
 theme_override_constants/margin_top = 32
 
@@ -238,87 +277,132 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="GridContainer" type="GridContainer" parent="FilterPopup/PanelContainer/MarginContainer" unique_id=8881169]
+[node name="VBoxContainer" type="VBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer" unique_id=404997192]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=500059497]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Filter"
+
+[node name="GridContainer" type="GridContainer" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=8881169]
 layout_mode = 2
 theme_override_constants/h_separation = 32
-theme_override_constants/v_separation = 32
+theme_override_constants/v_separation = 16
 columns = 2
 
-[node name="Label2" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=1741074000]
-layout_mode = 2
-text = "Sort by:"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=865486650]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = SubResource("Theme_4ytvr")
-
-[node name="Button" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer" unique_id=1654921002]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("6_g3eks")
-text = "Popularity"
-
-[node name="Space2" type="Control" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer" unique_id=2075505816]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button2" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer" unique_id=304512447]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("6_g3eks")
-text = "Rating"
-
-[node name="Space3" type="Control" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer" unique_id=759548270]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button3" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer" unique_id=849718120]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("6_g3eks")
-text = "Price"
-
-[node name="CheckBox" type="CheckBox" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=1019790710]
+[node name="Label" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=558913034]
 layout_mode = 2
 text = "Rating:"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=137517658]
+[node name="HBoxContainer2" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=137517658]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 32
+theme_override_constants/separation = 0
+alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2" unique_id=1387289890]
+[node name="Button" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HBoxContainer2" unique_id=373031618]
+material = SubResource("ShaderMaterial_7jp70")
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="SearchRatingLabel" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer" unique_id=201290618]
-unique_name_in_owner = true
-layout_mode = 2
-text = "⭐⭐⭐⭐⭐"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer" unique_id=1423660022]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="Label" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1396103922]
-layout_mode = 2
-text = "1"
-
-[node name="SearchRatingSlider" type="HSlider" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=1427639629]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 4
-min_value = 1.0
-max_value = 5.0
-value = 5.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mxgkd")
+text = "⭐"
+script = ExtResource("13_7jp70")
+index = 1
 
-[node name="Label2" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer/HBoxContainer" unique_id=754674259]
+[node name="Button2" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HBoxContainer2" unique_id=1961354540]
+material = SubResource("ShaderMaterial_7jp70")
 layout_mode = 2
-text = "5"
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mxgkd")
+text = "⭐"
+script = ExtResource("13_7jp70")
+index = 2
 
+[node name="Button3" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HBoxContainer2" unique_id=1796889465]
+material = SubResource("ShaderMaterial_7jp70")
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mxgkd")
+text = "⭐"
+script = ExtResource("13_7jp70")
+index = 3
+
+[node name="Button4" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HBoxContainer2" unique_id=753207891]
+material = SubResource("ShaderMaterial_7jp70")
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mxgkd")
+text = "⭐"
+script = ExtResource("13_7jp70")
+index = 4
+
+[node name="Button5" type="Button" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HBoxContainer2" unique_id=1152541395]
+material = SubResource("ShaderMaterial_7jp70")
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mxgkd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mxgkd")
+text = "⭐"
+script = ExtResource("13_7jp70")
+index = 5
+
+[node name="RatingOption" type="OptionButton" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HBoxContainer2" unique_id=1548651413]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_7jp70")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_icons/arrow = ExtResource("13_i42df")
+expand_icon = true
+selected = 0
+item_count = 2
+popup/item_0/text = "at least"
+popup/item_0/id = 0
+popup/item_1/text = "exactly"
+popup/item_1/id = 1
+
+[node name="Label2" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=199162898]
+layout_mode = 2
+text = "Price:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer" unique_id=1518152212]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HBoxContainer" unique_id=1889245052]
+layout_mode = 2
+text = "At most RM"
+
+[node name="Price" type="LineEdit" parent="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HBoxContainer" unique_id=919455313]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mj5lg")
+virtual_keyboard_type = 2
+caret_blink = true
+
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/SearchBar/Search" to="." method="_on_search_text_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SearchBar/MarginContainer/Filter" to="." method="_on_filter_pressed"]
-[connection signal="value_changed" from="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer/HBoxContainer/SearchRatingSlider" to="." method="_on_search_rating_slider_value_changed"]
+[connection signal="item_selected" from="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HBoxContainer2/RatingOption" to="." method="_on_rating_option_item_selected"]
+[connection signal="text_changed" from="FilterPopup/PanelContainer/MarginContainer/VBoxContainer/GridContainer/HBoxContainer/Price" to="." method="_on_price_text_changed"]
