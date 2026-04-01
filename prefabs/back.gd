@@ -10,6 +10,7 @@ static var back: PackedScene
 
 func _on_button_pressed() -> void:
 	if back:
-		scene = back
+		get_tree().change_scene_to_packed(back)
 		back = null
-	get_tree().change_scene_to_packed(scene)
+	elif scene:
+		get_tree().change_scene_to_packed(scene)

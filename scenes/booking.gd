@@ -7,6 +7,10 @@ extends Control
 @onready var receipt: Control = %Receipt
 
 
+func _ready() -> void:
+	popup.visible = false
+
+
 func _process(_delta: float) -> void:
 	var nonzero := false
 	
@@ -42,3 +46,7 @@ func _on_payment_button_pressed() -> void:
 
 func _on_receipt_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
+
+func _on_button_pressed() -> void:
+	popup.visible = false
