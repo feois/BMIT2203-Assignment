@@ -8,7 +8,7 @@
 [ext_resource type="Theme" uid="uid://dxqc3mw0rmvwx" path="res://scenes/circle_button.tres" id="4_13sgg"]
 [ext_resource type="Texture2D" uid="uid://81b4i5h7rojg" path="res://assets/filter.png" id="4_v86rl"]
 [ext_resource type="ButtonGroup" uid="uid://dvgd7s0x6h2ey" path="res://scenes/search_sorting.tres" id="6_g3eks"]
-[ext_resource type="Texture2D" uid="uid://dh4s21i68jg4m" path="res://assets/hotel1.jpg" id="7_70i5f"]
+[ext_resource type="Texture2D" uid="uid://47dof1visgpe" path="res://assets/room1.jpg" id="8_6cdou"]
 [ext_resource type="Texture2D" uid="uid://dj3yc0s5d6jvh" path="res://assets/hotel2.jpg" id="8_ufwb2"]
 [ext_resource type="Texture2D" uid="uid://dqofi18bg4dla" path="res://assets/hotel3.jpg" id="9_6cdou"]
 [ext_resource type="PackedScene" uid="uid://dubkw6fn2rh5c" path="res://addons/DatePickerFiles/CalendarPop/DatePickerPanel.tscn" id="10_70i5f"]
@@ -27,7 +27,7 @@ corner_radius_bottom_left = 16
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_13sgg"]
 
 [sub_resource type="Theme" id="Theme_i6lef"]
-Button/font_sizes/font_size = 24
+Button/font_sizes/font_size = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ytvr"]
 bg_color = Color(0.79, 0.79, 0.79, 1)
@@ -41,12 +41,6 @@ Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 Button/colors/font_pressed_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mae5d"]
-content_margin_left = 16.0
-content_margin_top = 16.0
-content_margin_right = 16.0
-content_margin_bottom = 16.0
 
 [node name="root" type="Control" unique_id=1566512179]
 layout_mode = 3
@@ -139,83 +133,92 @@ theme_override_constants/separation = 16
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=158518229]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Booking date:"
+text = "Date:"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1917332098]
+[node name="FromDate" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1624742031 instance=ExtResource("10_70i5f")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DatePickerPanel" parent="MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer" unique_id=1624742031 instance=ExtResource("10_70i5f")]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1089946619]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer" unique_id=1089946619]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 24
 text = "to"
 horizontal_alignment = 1
 
-[node name="DatePickerPanel2" parent="MarginContainer/VBoxContainer/HBoxContainer3/VBoxContainer" unique_id=108880848 instance=ExtResource("10_70i5f")]
+[node name="ToDate" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=108880848 instance=ExtResource("10_70i5f")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1856209915]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=2104096804]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1856209915]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/scrollbar_h_separation = 8
 horizontal_scroll_mode = 0
 scroll_hint_mode = 1
 
-[node name="Hotels" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=423356068]
+[node name="Hotels" type="GridContainer" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer" unique_id=423356068]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 columns = 2
 
-[node name="MenuHotel" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels" unique_id=273911559 instance=ExtResource("2_mae5d")]
+[node name="MenuHotel" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Hotels" unique_id=273911559 instance=ExtResource("2_mae5d")]
 layout_mode = 2
+size_flags_vertical = 0
+image = ExtResource("8_6cdou")
+hotel_name = "Alia Premier KLCC"
+rating = 4.0
+price_min = 159
+price_max = 432
 
-[node name="MenuHotel2" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels" unique_id=1475650046 instance=ExtResource("2_mae5d")]
+[node name="MenuHotel4" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Hotels" unique_id=1883139372 instance=ExtResource("2_mae5d")]
 layout_mode = 2
+size_flags_vertical = 0
+image = ExtResource("9_6cdou")
+hotel_name = "AXON Residences Kuala Lumpur"
+rating = 3.0
+price_min = 169
+price_max = 475
 
-[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel2/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1475650046, 838905656) index="0" unique_id=407174072]
-texture = ExtResource("7_70i5f")
-
-[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel2/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1475650046, 838905656) index="1" unique_id=454807334]
-text = "Platinum Suites
-⭐⭐⭐⭐⭐
-RM 255 - RM 510"
-
-[node name="MenuHotel3" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels" unique_id=1843355641 instance=ExtResource("2_mae5d")]
+[node name="MenuHotel2" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Hotels" unique_id=1475650046 instance=ExtResource("2_mae5d")]
 layout_mode = 2
+size_flags_vertical = 0
+image = ExtResource("8_ufwb2")
+hotel_name = "Platinum Suites"
+price_min = 255
+price_max = 510
 
-[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel3/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1843355641, 838905656) index="0" unique_id=407174072]
-texture = ExtResource("8_ufwb2")
-
-[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel3/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1843355641, 838905656) index="1" unique_id=454807334]
-text = "Luxe Suites Home
-⭐⭐⭐⭐
-RM 116 - RM 387"
-
-[node name="MenuHotel4" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels" unique_id=1883139372 instance=ExtResource("2_mae5d")]
+[node name="MenuHotel3" parent="MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/Hotels" unique_id=1843355641 instance=ExtResource("2_mae5d")]
 layout_mode = 2
+size_flags_vertical = 0
+image = ExtResource("8_ufwb2")
+hotel_name = "Luxe Suites Home"
+rating = 4.0
+price_min = 116
+price_max = 387
 
-[node name="TextureRect" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel4/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1883139372, 838905656) index="0" unique_id=407174072]
-texture = ExtResource("9_6cdou")
-
-[node name="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel4/MarginContainer/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(1883139372, 838905656) index="1" unique_id=454807334]
-text = "AXON Residences Kuala Lumpur
-⭐⭐⭐
-RM 169 - RM 475"
-
-[node name="MenuHotel5" parent="MarginContainer/VBoxContainer/ScrollContainer/Hotels" unique_id=365573208 instance=ExtResource("2_mae5d")]
+[node name="NoDate" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=589499142]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Select date to see recommendations!"
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Nav" parent="MarginContainer/VBoxContainer" unique_id=769869833 instance=ExtResource("3_mae5d")]
 layout_mode = 2
 
 [node name="FilterPopup" type="MarginContainer" parent="." unique_id=716215844]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 15.0
 offset_top = 304.0
@@ -279,12 +282,6 @@ text = "Price"
 
 [node name="CheckBox" type="CheckBox" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=1019790710]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_mae5d")
 text = "Rating:"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="FilterPopup/PanelContainer/MarginContainer/GridContainer" unique_id=137517658]
@@ -325,8 +322,3 @@ text = "5"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SearchBar/MarginContainer/Filter" to="." method="_on_filter_pressed"]
 [connection signal="value_changed" from="FilterPopup/PanelContainer/MarginContainer/GridContainer/HBoxContainer2/VBoxContainer/HBoxContainer/SearchRatingSlider" to="." method="_on_search_rating_slider_value_changed"]
-
-[editable path="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel"]
-[editable path="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel2"]
-[editable path="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel3"]
-[editable path="MarginContainer/VBoxContainer/ScrollContainer/Hotels/MenuHotel4"]

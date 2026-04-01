@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dogkhlex70krw"]
+
+[ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_e2lan"]
+[ext_resource type="Script" uid="uid://duaxdr0tps578" path="res://prefabs/quantity.gd" id="2_v8538"]
+
+[node name="Quantity" type="HBoxContainer" unique_id=997186854]
+theme = ExtResource("1_e2lan")
+script = ExtResource("2_v8538")
+
+[node name="CenterContainer2" type="CenterContainer" parent="." unique_id=1422454072]
+layout_mode = 2
+
+[node name="Decrement" type="Button" parent="CenterContainer2" unique_id=834282723]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+text = "-"
+
+[node name="Label" type="Label" parent="." unique_id=1323532428]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1975173952]
+layout_mode = 2
+
+[node name="Increment" type="Button" parent="CenterContainer" unique_id=1414764003]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+text = "+"
+
+[connection signal="pressed" from="CenterContainer2/Decrement" to="." method="_on_decrement_pressed"]
+[connection signal="pressed" from="CenterContainer/Increment" to="." method="_on_increment_pressed"]

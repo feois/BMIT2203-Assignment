@@ -7,7 +7,7 @@ const faved := preload("res://assets/bookmarked.png")
 
 @onready var fav: TextureRect = %FavTexture
 
-@export var link := &""
+@export var link := ""
 
 
 var is_faved := false

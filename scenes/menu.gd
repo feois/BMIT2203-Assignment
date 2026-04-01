@@ -7,14 +7,18 @@ extends Control
 @onready var search_bar: Control = %SearchBar
 @onready var filter: Button = %Filter
 @onready var filter_popup: Control = %FilterPopup
+@onready var from_date: DatePicker = %FromDate
+@onready var to_date: DatePicker = %ToDate
 
 
 func _ready() -> void:
 	filter_popup.visible = false
 	
 	for hotel in hotels.get_children():
-		var button := hotel.get_node(^"%Button") as Button
-		button.pressed.connect(func (): get_tree().change_scene_to_packed(scene))
+		(hotel as MenuHotel).pressed.connect(func (): get_tree().change_scene_to_packed(scene))
+	
+	hotels.visible = false
+	%NoDate.visible = true
 
 
 func _process(_delta: float) -> void:
@@ -24,6 +28,10 @@ func _process(_delta: float) -> void:
 		filter_popup.visible = focused and (focused == filter_popup or filter_popup.is_ancestor_of(focused))
 	
 	filter.button_pressed = filter_popup.visible
+	
+	if from_date.date_picker_button.text != " " and to_date.date_picker_button.text != " ":
+		hotels.visible = true
+		%NoDate.visible = false
 
 
 func _gui_input(event: InputEvent) -> void:

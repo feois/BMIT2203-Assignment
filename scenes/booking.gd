@@ -7,6 +7,18 @@ extends Control
 @onready var receipt: Control = %Receipt
 
 
+func _process(_delta: float) -> void:
+	var nonzero := false
+	
+	for option in %Options.get_children():
+		if option is Quantity:
+			if option.label.text != '0':
+				nonzero = true
+				break
+	
+	%Reserve.disabled = !nonzero
+
+
 func _on_popup_focus_entered() -> void:
 	popup.visible = false
 

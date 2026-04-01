@@ -1,12 +1,22 @@
 [gd_scene format=3 uid="uid://c0qblbhnuk34p"]
 
 [ext_resource type="Theme" uid="uid://cr8llqg2k5vg3" path="res://theme.tres" id="1_80hdx"]
-[ext_resource type="Texture2D" uid="uid://47dof1visgpe" path="res://assets/room1.jpg" id="2_80hdx"]
+[ext_resource type="Script" uid="uid://bdv4rlc40bixv" path="res://prefabs/menu_hotel.gd" id="2_ihrgg"]
+[ext_resource type="Script" uid="uid://bawgq3wb4fsip" path="res://addons/TextureRectRounded/TextureRectRounded.gd" id="4_mawwv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihrgg"]
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+corner_detail = 20
+anti_aliasing = false
 
 [node name="MenuHotel" type="CenterContainer" unique_id=273911559]
 size_flags_horizontal = 3
 mouse_behavior_recursive = 1
 theme = ExtResource("1_80hdx")
+script = ExtResource("2_ihrgg")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1434762586]
 layout_mode = 2
@@ -18,28 +28,77 @@ mouse_behavior_recursive = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1872813107]
 layout_mode = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer" unique_id=838905656]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=407174072]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 2
-texture = ExtResource("2_80hdx")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=454807334]
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer/VBoxContainer/TextureRect" unique_id=2014630895]
+unique_name_in_owner = true
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ihrgg")
+script = ExtResource("4_mawwv")
+corner_detail = 32
+radius_bottom_left = 32
+radius_bottom_right = 32
+radius_top_left = 32
+radius_top_right = 32
+stretch_mode = 6
+
+[node name="Name" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=454807334]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
+size_flags_vertical = 3
 mouse_filter = 1
-text = "Alia Premier KLCC
-⭐⭐⭐⭐
-RM159 - RM 432"
-horizontal_alignment = 1
+theme_override_font_sizes/font_size = 24
 autowrap_mode = 3
+
+[node name="Rating" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=602040091]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/font_size = 20
+text = "⭐⭐⭐⭐⭐"
+autowrap_mode = 3
+
+[node name="Address" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1064289862]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+
+[node name="Price" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1725686552]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+text = "RM 0 - 0"
+autowrap_mode = 3
+
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]

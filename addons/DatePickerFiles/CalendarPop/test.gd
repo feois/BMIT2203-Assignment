@@ -1,3 +1,4 @@
+class_name DatePicker
 extends Control
 
 
@@ -31,7 +32,7 @@ var global_time_data = {}
 @onready var choose_month_year = %ChooseMonthYearPanel
 @onready var month_grid = %MonthGrid
 @onready var date_picker_panel = %DatePickerPanel
-@onready var date_picker_button = %DatePickerButton
+@onready var date_picker_button: Button = %DatePickerButton
 
 var year = 2024
 var month = 1
@@ -135,6 +136,9 @@ func create_date_picker(year: int, month: int) -> Dictionary:
 	
 	return date_data_dict
 
+func _process(_delta: float) -> void:
+	pass
+
 func update_month_year_label(year, month):
 	var month_abbreviations = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 	
@@ -233,7 +237,7 @@ func _on_button_pressed():
 		date_picker_panel.visible = true
 		
 		var new_pos = self.global_position
-		new_pos.x += (date_picker_button.size.x - date_picker_panel.size.x) / 2
+		new_pos.x += (date_picker_button.size.x - date_picker_panel.size.x) / 1
 		new_pos.y += date_picker_button.size.y + 16
 		date_picker_panel.position = new_pos
 		choose_month_year.position = new_pos
@@ -264,7 +268,7 @@ func update_date_pressed(button_node, button_type, button_data):
 	button_node.button_pressed = true
 	
 	global_date_data = button_data
-	var new_selected_date = str(get_weekday_name(button_data.weekday)) + ", " + str(get_month_name(button_data.month)) + " " + str(button_data.day) + ", " + str(button_data.year)
+	var new_selected_date = str(get_month_name(button_data.month)) + " " + str(button_data.day) + ", " + str(button_data.year)
 	selected_date_label.text = new_selected_date
 
 func get_month_name(month: int) -> String:
