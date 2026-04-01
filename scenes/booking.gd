@@ -32,6 +32,7 @@ func _on_reserve_pressed() -> void:
 	confirmation.visible = true
 	payment.visible = false
 	receipt.visible = false
+	%Back.visible = true
 
 
 func _on_confirmation_button_pressed() -> void:
@@ -42,6 +43,7 @@ func _on_confirmation_button_pressed() -> void:
 func _on_payment_button_pressed() -> void:
 	payment.visible = false
 	receipt.visible = true
+	%Back.visible = false
 
 
 func _on_receipt_button_pressed() -> void:
