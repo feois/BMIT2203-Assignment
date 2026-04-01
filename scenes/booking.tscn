@@ -317,10 +317,10 @@ text = "Cancel"
 
 [node name="MarginContainer2" type="MarginContainer" parent="Popup/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=836683967]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Confirmation" type="VBoxContainer" parent="Popup/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2" unique_id=717091776]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 32
 
@@ -335,23 +335,28 @@ autowrap_mode = 3
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_m6f56")
 
-[node name="Label2" type="Label" parent="Popup/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/Confirmation" unique_id=2006722324]
+[node name="ScrollContainer" type="ScrollContainer" parent="Popup/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/Confirmation" unique_id=757652284]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="Popup/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/Confirmation/ScrollContainer" unique_id=2006722324]
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "Name: Soon Yik
 Hotel: Trivago
 Date: 1/2/2026 - 3/4/2026
 Room:
 1× Studio Twin
-1x Family Junior Suite
+1× Family Junior Suite
+Extra request:
+1× Extra Bed
+1× Baby Crib
+GYM Room
 
 Total: RM 500.00"
 autowrap_mode = 3
-
-[node name="Space" type="Control" parent="Popup/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/Confirmation" unique_id=117970398]
-layout_mode = 2
-size_flags_vertical = 3
 
 [node name="ConfirmationButton" type="Button" parent="Popup/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/Confirmation" unique_id=2137650391]
 layout_mode = 2
@@ -361,6 +366,7 @@ text = "Confirm"
 
 [node name="Payment" type="VBoxContainer" parent="Popup/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2" unique_id=223746512]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
 

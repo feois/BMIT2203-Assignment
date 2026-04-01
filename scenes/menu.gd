@@ -26,7 +26,7 @@ func update_hotels() -> void:
 	var terms := search.text
 	
 	for hotel in get_hotels():
-		hotel.visible = terms.is_empty() or hotel.hotel_name.to_lower().contains(terms)
+		hotel.visible = terms.is_empty() or hotel.address.to_lower().contains(terms)
 		if ((hotel.rating < rating) if rating_option.selected == 0 else (hotel.rating != rating)):
 			hotel.visible = false
 		if hotel.price_min > price:

@@ -134,7 +134,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_g3eks")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_13sgg")
-placeholder_text = "Search"
+placeholder_text = "Search by address"
 alignment = 1
 caret_blink = true
 right_icon = ExtResource("1_lti8b")
@@ -200,12 +200,14 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/scrollbar_h_separation = 8
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
 scroll_hint_mode = 1
 
 [node name="Hotels" type="GridContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer" unique_id=423356068]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/h_separation = 0
 columns = 2
 
 [node name="MenuHotel" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/Hotels" unique_id=273911559 instance=ExtResource("2_mae5d")]
@@ -214,6 +216,7 @@ size_flags_vertical = 0
 image = ExtResource("8_6cdou")
 hotel_name = "Alia Premier KLCC"
 rating = 4.0
+address = "3rd Floor, 138, Jln Ampang, Kampung Baru, 50450 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
 price_min = 159
 price_max = 432
 
@@ -223,6 +226,7 @@ size_flags_vertical = 0
 image = ExtResource("9_6cdou")
 hotel_name = "AXON Residences Kuala Lumpur"
 rating = 3.0
+address = "Axon Residence, Jalan Walter Granier, Bukit Bintang, 55100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
 price_min = 169
 price_max = 475
 
@@ -231,6 +235,7 @@ layout_mode = 2
 size_flags_vertical = 0
 image = ExtResource("8_ufwb2")
 hotel_name = "Platinum Suites"
+address = "Jalan sultan Ismail, Jln Tun Razak, 50250 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
 price_min = 255
 price_max = 510
 
@@ -240,6 +245,7 @@ size_flags_vertical = 0
 image = ExtResource("8_ufwb2")
 hotel_name = "Luxe Suites Home"
 rating = 4.0
+address = "18, Jalan Dewan Sultan Sulaiman, Chow Kit, 50300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
 price_min = 116
 price_max = 387
 
@@ -258,6 +264,7 @@ layout_mode = 2
 
 [node name="FilterPopup" type="MarginContainer" parent="." unique_id=716215844]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 44.0
 offset_top = 346.0
